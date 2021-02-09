@@ -5,6 +5,10 @@ const Title = styled.h1`
   color: ${({ theme }) => theme.colors.primary};
 `
 
+function MyTitle(props) {
+  return <h1>{props.children}</h1>
+}
+
 export default function Home() {
-  return <Title>My page</Title>
+  return <MyTitle>Josafá Verí</MyTitle>
 }
