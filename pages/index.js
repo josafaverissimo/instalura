@@ -1,3 +1,4 @@
+import React from 'react'
 import styled from 'styled-components'
 
 const Title = styled.h1`
@@ -6,9 +7,14 @@ const Title = styled.h1`
 `
 
 function MyTitle(props) {
-  return <h1>{props.children}</h1>
+  return (
+    <>
+      <h1>{props.children}</h1>
+      <p>{props.subtitle}</p>
+    </>
+  )
 }
 
 export default function Home() {
-  return <MyTitle>Josafá Verí</MyTitle>
+  return <MyTitle subtitle="josafá veríssimo">Jamstack</MyTitle>
 }
