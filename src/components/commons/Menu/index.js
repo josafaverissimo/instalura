@@ -11,11 +11,11 @@ export default function Menu() {
     },
     {
       text: 'Perguntas frequentes',
-      url: '/',
+      url: '/faq',
     },
     {
       text: 'Sobre',
-      url: '/',
+      url: '/about',
     }
   ]
   return (
