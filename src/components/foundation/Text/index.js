@@ -2,7 +2,7 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
 
-export const TextStyleVariantsMap = {
+export const TextStyleVariants = {
   paragraph1: css`
     font-size: ${({ theme }) => theme.typographyVariants.paragraph1.fontSize};
     font-weight: ${({ theme }) => theme.typographyVariants.paragraph1.fontWeight};
@@ -16,7 +16,7 @@ export const TextStyleVariantsMap = {
 }
 
 const TextBase = styled.span`
-  ${({ variant }) => TextStyleVariantsMap[variant]}
+  ${({ variant }) => TextStyleVariants[variant]}
 `
 
 export default function Text({ tag, variant, children }) {
