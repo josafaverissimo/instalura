@@ -78,7 +78,6 @@ MenuWrapper.CentralSide = styled.div`
     text-align: center;
     display: block;
     text-decoration: none;
-    color: #88989E;
     transition: 200ms ease-in-out;
     ${breakpointsMedia({
     xs: css`

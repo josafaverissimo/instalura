@@ -10,4 +10,9 @@ export const Box = styled.div`
   ${propToStyle('backgroundImage')}
   ${propToStyle('backgroundRepeat')}
   ${propToStyle('backgroundPosition')}
+  ${propToStyle('backgroundColor')}
+  background-color: ${({ theme }) => {
+    console.log('currentMode> ', theme.colors.currentMode);
+    return theme.colors.modes[theme.colors.currentMode].background.main.color;
+  }};
 `;

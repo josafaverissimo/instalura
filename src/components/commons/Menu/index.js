@@ -31,6 +31,7 @@ export default function Menu() {
             <Text
               tag="a"
               variant="smallestException"
+              color="tertiary.light"
               href={link.url}
             >
               {link.text}
