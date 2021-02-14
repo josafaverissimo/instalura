@@ -26,4 +26,4 @@ export default createGlobalStyle`
     display: flex;
     flex-direction: column;
   }
-`
+`;

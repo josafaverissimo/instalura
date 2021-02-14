@@ -1,4 +1,4 @@
-import {typographyVariants} from './typographyVariants';
+import { typographyVariants } from './typographyVariants';
 
 export const colors = {
   background: {
@@ -42,12 +42,12 @@ export const colors = {
 };
 
 export const breakpoints = {
-    xs: 0, // extra small
-    sm: 480, // small
-    md: 768, // medium
-    lg: 992, // large
-    xl: 1200, // extra large
-}
+  xs: 0, // extra small
+  sm: 480, // small
+  md: 768, // medium
+  lg: 992, // large
+  xl: 1200, // extra large
+};
 export default {
   colors,
   borderRadius: '12px',

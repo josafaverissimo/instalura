@@ -17,8 +17,8 @@ export default function Menu() {
     {
       text: 'Sobre',
       url: '/about',
-    }
-  ]
+    },
+  ];
   return (
     <MenuWrapper>
       <MenuWrapper.LeftSide>
@@ -26,7 +26,7 @@ export default function Menu() {
       </MenuWrapper.LeftSide>
 
       <MenuWrapper.CentralSide>
-        {links.map(link => (
+        {links.map((link) => (
           <li key={link.url}>
             <Text
               tag="a"
@@ -38,11 +38,11 @@ export default function Menu() {
           </li>
         ))}
       </MenuWrapper.CentralSide>
-      
+
       <MenuWrapper.RightSide>
         <Button ghost variant="secondary.main">Entrar</Button>
-        <Button variant="primary.main" >Cadastrar</Button>
+        <Button variant="primary.main">Cadastrar</Button>
       </MenuWrapper.RightSide>
     </MenuWrapper>
-  )
+  );
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import get from 'lodash/get'
+import get from 'lodash/get';
 import PropTypes from 'prop-types';
 import { propToStyle } from '../../../theme/utils/propToStyle';
 
@@ -14,8 +14,8 @@ export const TextStyleVariants = {
     font-size: ${({ theme }) => theme.typographyVariants.smallestException.fontSize};
     font-weight: ${({ theme }) => theme.typographyVariants.smallestException.fontWeight};
     line-height: ${({ theme }) => theme.typographyVariants.smallestException.lineHeight};
-  `
-}
+  `,
+};
 
 const TextBase = styled.span`
   ${({ variant }) => TextStyleVariants[variant]}
@@ -25,28 +25,31 @@ const TextBase = styled.span`
   ${propToStyle('textAlign')}
 
   ${(props) => propToStyle('textAlign', props)}
-`
+`;
 
-export default function Text({ tag, variant, children, ...props }) {
+export default function Text({
+  tag, variant, children, ...props
+}) {
   return (
     <TextBase
       as={tag}
       variant={variant}
+      // eslint-disable-next-line react/jsx-props-no-spreading
       {...props}
     >
       { children }
     </TextBase>
-  )
-}
-
-Text.propTypes = {
-  tag: PropTypes.string,
-  variant: PropTypes.string,
-  children: PropTypes.node.isRequired,
+  );
 }
 
 Text.defaultPropos = {
   tag: 'span',
   variant: 'paragraph1',
-  color: '#0f0'
-}
+  color: '#0f0',
+};
+
+Text.propTypes = {
+  tag: PropTypes.string.isRequired,
+  variant: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+};

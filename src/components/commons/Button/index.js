@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import get from 'lodash/get';
-import { TextStyleVariants } from "../../foundation/Text";
-import { breakpointsMedia} from '../../../theme/utils/breakpointsMedia';
+import { TextStyleVariants } from '../../foundation/Text';
+import { breakpointsMedia } from '../../../theme/utils/breakpointsMedia';
 import { propToStyle } from '../../../theme/utils/propToStyle';
 
 const ButtonGhost = css`
@@ -25,9 +25,7 @@ export const Button = styled.button`
 
   ${TextStyleVariants.smallestException}
 
-  ${(props) => {
-    return props.ghost ? ButtonGhost : ButtonDefault
-  }}
+  ${(props) => (props.ghost ? ButtonGhost : ButtonDefault)}
   &:hover,
   &:focus {
     opacity: .5;
@@ -41,7 +39,7 @@ export const Button = styled.button`
     md: css`
       /* From md breakpoint */
       ${TextStyleVariants.paragraph1}
-    `
+    `,
   })}
 
   ${propToStyle('margin')}

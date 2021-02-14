@@ -28,7 +28,7 @@ const Container = styled.div`
     `,
   })}
 
-  ${propToStyle("marginTop")}
+  ${propToStyle('marginTop')}
 `;
 
 const Col = styled.div`
@@ -39,11 +39,11 @@ const Col = styled.div`
   max-width: 100%;
 
   ${({ value }) => {
-    if(typeof value === 'number') {
+    if (typeof value === 'number') {
       return css`
         flex-basis: ${(100 * value) / 12}%;
         max-width: ${(100 * value) / 12}%;
-      `
+      `;
     }
 
     return breakpointsMedia({
@@ -77,14 +77,14 @@ const Col = styled.div`
         flex-basis: ${(100 * value.xl) / 12}%;
         max-width: ${(100 * value.xl) / 12}%;
       ` : '',
-    })
+    });
   }}
 
   ${({ offset }) => {
-    if(typeof offset === 'number') {
+    if (typeof offset === 'number') {
       return css`
         margin-left: ${(100 * offset) / 12}%;
-      `
+      `;
     }
 
     return breakpointsMedia({
@@ -103,13 +103,13 @@ const Col = styled.div`
       xl: offset?.xl ? css`
         margin-left: ${(100 * offset.xl) / 12}%;
       ` : '',
-    })
+    });
   }}
 
-  ${propToStyle("display")}
-  ${propToStyle("alignItems")}
-  ${propToStyle("justifyContent")}
-  ${propToStyle("flexDirection")}
+  ${propToStyle('display')}
+  ${propToStyle('alignItems')}
+  ${propToStyle('justifyContent')}
+  ${propToStyle('flexDirection')}
 `;
 
 const Row = styled.div`
@@ -122,5 +122,5 @@ const Row = styled.div`
 export const Grid = {
   Container,
   Col,
-  Row  
+  Row,
 };
