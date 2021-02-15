@@ -3,8 +3,11 @@ import { MenuWrapper } from './styles/MenuWrapper';
 import Logo from '../../../theme/Logo';
 import { Button } from '../Button';
 import Text from '../../foundation/Text';
+import Sun from '../../../theme/Sun';
 
-export default function Menu() {
+export default function Menu({ mode, changeMode }) {
+  const currentUrlPathname = new URL('http://localhost:3000/').pathname;
+
   const links = [
     {
       text: 'Home',
@@ -19,20 +22,22 @@ export default function Menu() {
       url: '/about',
     },
   ];
+
   return (
     <MenuWrapper>
       <MenuWrapper.LeftSide>
-        <Logo />
+        <Logo mode={mode} />
       </MenuWrapper.LeftSide>
 
-      <MenuWrapper.CentralSide>
+      <MenuWrapper.CentralSide mode={mode}>
         {links.map((link) => (
           <li key={link.url}>
             <Text
               tag="a"
               variant="smallestException"
-              color="tertiary.light"
+              color={currentUrlPathname === link.url ? 'secondary.main' : 'tertiary.main'}
               href={link.url}
+              mode={mode}
             >
               {link.text}
             </Text>
@@ -41,8 +46,11 @@ export default function Menu() {
       </MenuWrapper.CentralSide>
 
       <MenuWrapper.RightSide>
-        <Button ghost variant="secondary.main">Entrar</Button>
-        <Button variant="primary.main">Cadastrar</Button>
+        <Button ghost variant="secondary.main" mode={mode} onClick={changeMode}>
+          <Sun mode={mode} />
+        </Button>
+        <Button ghost variant="secondary.main" mode={mode}>Entrar</Button>
+        <Button variant="primary.main" mode={mode}>Cadastrar</Button>
       </MenuWrapper.RightSide>
     </MenuWrapper>
   );

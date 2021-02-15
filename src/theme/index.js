@@ -1,15 +1,16 @@
 import { typographyVariants } from './typographyVariants';
 
+// const c = useState('light');
+
 export const colors = {
-  currentMode: 'dark',
   modes: {
     light: {
       background: {
         light: {
-          color: '#FFFFFF',
+          color: '#F2F2F2',
         },
         main: {
-          color: '#F2F2F2',
+          color: '#fff',
         },
       },
       borders: {
@@ -46,12 +47,12 @@ export const colors = {
           color: '#1f1f1f',
         },
         main: {
-          color: '#121212',
+          color: '#030506',
         },
       },
       borders: {
         main: {
-          color: '#000',
+          color: '#181F22',
         },
       },
       primary: {
@@ -62,7 +63,7 @@ export const colors = {
       },
       secondary: {
         main: {
-          color: '#FB7B6B',
+          color: '#FFA59A',
           contrastText: '#fff',
         },
       },
@@ -72,7 +73,7 @@ export const colors = {
           contrastText: '#070C0E',
         },
         light: {
-          color: '#c0c0c0',
+          color: '#D4D4D4',
           contrastText: '#070C0E',
         },
       },

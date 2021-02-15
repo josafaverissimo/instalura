@@ -5,8 +5,15 @@ import Text from '../src/components/foundation/Text';
 import { Button } from '../src/components/commons/Button';
 import { Grid } from '../src/components/foundation/layout/Grid';
 import { Box } from '../src/components/foundation/layout/Box';
+import Bubbles from '../src/theme/Bubbles';
 
 export default function Home() {
+  const [currentMode, setCurrentMode] = React.useState('light');
+
+  function handleChangeCurrentMode() {
+    setCurrentMode(currentMode === 'dark' ? 'light' : 'dark');
+  }
+
   return (
     <Box
       flex="1"
@@ -14,11 +21,12 @@ export default function Home() {
       flexWrap="wrap"
       flexDirection="column"
       justifyContent="space-between"
-      backgroundImage="url(/images/bubbles.svg)"
+      backgroundImage={`url(${Bubbles.url(currentMode)})`}
       backgroundRepeat="no-repeat"
       backgroundPosition="bottom right"
+      mode={currentMode}
     >
-      <Menu />
+      <Menu mode={currentMode} changeMode={handleChangeCurrentMode} />
 
       <Grid.Container marginTop={{
         xs: '32px',
@@ -42,6 +50,7 @@ export default function Home() {
                 xs: 'center',
                 md: 'left',
               }}
+              mode={currentMode}
             >
               Compartilhe momentos e conecte-se com amigos
             </Text>
@@ -53,6 +62,7 @@ export default function Home() {
                 xs: 'center',
                 md: 'left',
               }}
+              mode={currentMode}
             >
               Lorem Ipsum is simply dummy text of the printing and typesetting industry.
               Lorem Ipsum has been the industrys standard dummy text ever since the 1500s.
@@ -65,6 +75,7 @@ export default function Home() {
                 xs: 'auto',
                 md: 'initial',
               }}
+              mode={currentMode}
             >
               Cadastrar
             </Button>
@@ -85,7 +96,7 @@ export default function Home() {
         </Grid.Row>
       </Grid.Container>
 
-      <Footer />
+      <Footer mode={currentMode} />
     </Box>
   );
 }

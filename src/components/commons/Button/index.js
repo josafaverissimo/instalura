@@ -5,13 +5,13 @@ import { breakpointsMedia } from '../../../theme/utils/breakpointsMedia';
 import { propToStyle } from '../../../theme/utils/propToStyle';
 
 const ButtonGhost = css`
-  color: ${({ variant, theme }) => get(theme, `colors.modes[${theme.colors.currentMode}].${variant}.color`)};
+  color: ${({ variant, theme, mode }) => get(theme, `colors.modes[${mode}].${variant}.color`)};
   background: transparent;
 `;
 
 const ButtonDefault = css`
-  color: ${({ variant, theme }) => get(theme, `colors.modes[${theme.colors.currentMode}].${variant}.contrastText`)};
-  background-color: ${({ variant, theme }) => get(theme, `colors.modes[${theme.colors.currentMode}].${variant}.color`)};
+  color: ${({ variant, theme, mode }) => get(theme, `colors.modes[${mode}].${variant}.contrastText`)};
+  background-color: ${({ variant, theme, mode }) => get(theme, `colors.modes[${mode}].${variant}.color`)};
 `;
 
 export const Button = styled.button`

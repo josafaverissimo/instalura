@@ -11,8 +11,5 @@ export const Box = styled.div`
   ${propToStyle('backgroundRepeat')}
   ${propToStyle('backgroundPosition')}
   ${propToStyle('backgroundColor')}
-  background-color: ${({ theme }) => {
-    console.log('currentMode> ', theme.colors.currentMode);
-    return theme.colors.modes[theme.colors.currentMode].background.main.color;
-  }};
+  background-color: ${({ theme, mode }) => theme.colors.modes[mode].background.main.color};
 `;

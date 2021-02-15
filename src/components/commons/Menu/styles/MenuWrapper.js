@@ -90,7 +90,7 @@ MenuWrapper.CentralSide = styled.div`
     &:hover,
     &:focus {
       font-weight: 500;
-      color: #070C0E;
+      color: ${({ theme, mode }) => theme.colors.modes[mode].tertiary.main.color};
       
     }
   }
