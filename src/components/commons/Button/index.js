@@ -26,10 +26,14 @@ export const Button = styled.button`
   ${TextStyleVariants.smallestException}
 
   ${(props) => (props.ghost ? ButtonGhost : ButtonDefault)}
-  &:hover,
-  &:focus {
+  &:hover {
     opacity: .5;
   }
+
+  ${(props) => !props.notStyleFocus && css`
+    &:focus {
+      opacity: .5;
+    }`}
 
   ${breakpointsMedia({
     xs: css`

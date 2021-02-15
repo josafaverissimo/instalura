@@ -46,7 +46,7 @@ export default function Menu({ mode, changeMode }) {
       </MenuWrapper.CentralSide>
 
       <MenuWrapper.RightSide>
-        <Button ghost variant="secondary.main" mode={mode} onClick={changeMode}>
+        <Button ghost variant="secondary.main" mode={mode} onClick={changeMode} notStyleFocus>
           <Sun mode={mode} />
         </Button>
         <Button ghost variant="secondary.main" mode={mode}>Entrar</Button>
