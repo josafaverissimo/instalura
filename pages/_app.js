@@ -5,7 +5,6 @@ import theme from '../src/theme';
 import GlobalStyle from '../src/theme/GlobalStyle';
 
 export default function App({ Component, pageProps }) {
-  const { light, dark } = theme.colors.modes;
   return (
     <>
       <Head>

@@ -6,9 +6,11 @@ import { Button } from '../src/components/commons/Button';
 import { Grid } from '../src/components/foundation/layout/Grid';
 import { Box } from '../src/components/foundation/layout/Box';
 import Bubbles from '../src/theme/Bubbles';
+import Modal from '../src/components/commons/Modal';
 
 export default function Home() {
   const [currentMode, setCurrentMode] = React.useState('light');
+  const [isModalOpen, setIsModalOpen] = React.useState(false);
 
   function handleChangeCurrentMode() {
     setCurrentMode(currentMode === 'dark' ? 'light' : 'dark');
@@ -26,6 +28,24 @@ export default function Home() {
       backgroundPosition="bottom right"
       mode={currentMode}
     >
+      <Modal
+        isOpen={isModalOpen}
+        onClose={() => {
+          setIsModalOpen(!isModalOpen);
+        }}
+      >
+        {(modalsProps) => (
+          <Box
+            backgroundColor="white"
+            mode={currentMode}
+            data-modal-safe-area="true"
+            {...modalsProps}
+          >
+            Modal
+          </Box>
+        )}
+      </Modal>
+
       <Menu mode={currentMode} changeMode={handleChangeCurrentMode} />
 
       <Grid.Container marginTop={{
@@ -76,6 +96,9 @@ export default function Home() {
                 md: 'initial',
               }}
               mode={currentMode}
+              onClick={() => {
+                setIsModalOpen(!isModalOpen);
+              }}
             >
               Cadastrar
             </Button>
