@@ -41,7 +41,7 @@ export default function Home() {
             data-modal-safe-area="true"
             {...modalsProps}
           >
-            Modal
+            modal
           </Box>
         )}
       </Modal>
