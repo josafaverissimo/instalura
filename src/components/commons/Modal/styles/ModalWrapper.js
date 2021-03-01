@@ -12,6 +12,8 @@ export default styled.div`
   bottom: 0;
   margin: auto;
   overflow: scroll;
+  transition: .3s;
+  z-index: 100;
 
   ${({ isOpen }) => {
     if (isOpen) {
