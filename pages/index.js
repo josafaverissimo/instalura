@@ -11,7 +11,7 @@ import FormCadastro from '../src/components/patterns/FormCadastro';
 
 export default function Home() {
   const [currentMode, setCurrentMode] = React.useState('light');
-  const [isModalOpen, setIsModalOpen] = React.useState(true);
+  const [isModalOpen, setIsModalOpen] = React.useState(false);
 
   function handleChangeCurrentMode() {
     setCurrentMode(currentMode === 'dark' ? 'light' : 'dark');
