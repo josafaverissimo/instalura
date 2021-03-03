@@ -7,6 +7,7 @@ import { Grid } from '../src/components/foundation/layout/Grid';
 import { Box } from '../src/components/foundation/layout/Box';
 import Bubbles from '../src/theme/Bubbles';
 import Modal from '../src/components/commons/Modal';
+import FormCadastro from '../src/components/patterns/FormCadastro';
 
 export default function Home() {
   const [currentMode, setCurrentMode] = React.useState('light');
@@ -35,14 +36,15 @@ export default function Home() {
         }}
       >
         {(modalsProps) => (
-          <Box
-            backgroundColor="white"
-            mode={currentMode}
-            data-modal-safe-area="true"
-            {...modalsProps}
-          >
-            modal
-          </Box>
+          <FormCadastro modalsProps={modalsProps} />
+          // <Box
+          //   backgroundColor="white"
+          //   mode={currentMode}
+          //   data-modal-safe-area="true"
+          //   {...modalsProps}
+          // >
+          //   modal
+          // </Box>
         )}
       </Modal>
 
