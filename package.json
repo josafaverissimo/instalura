@@ -1,5 +1,5 @@
 {
-  "name": "with-styled-components",
+  "name": "instalura",
   "version": "1.0.0",
   "scripts": {
     "dev": "next",
@@ -23,22 +23,24 @@
     "styled-components": "^5.0.0",
     "styled-normalize": "^8.0.7"
   },
-  "devDependencies": {
-    "@commitlint/cli": "^12.0.1",
-    "@commitlint/config-conventional": "^12.0.1",
+    "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
     "babel-plugin-styled-components": "^1.8.0",
     "cz-conventional-changelog": "3.3.0",
-    "eslint": "^7.20.0",
+    "eslint": "^7.18.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "husky": "4"
+    "husky": "^4.3.8",
+    "shelljs": "^0.8.4"
   },
   "husky": {
     "hooks": {
-      "pre-push": "yarn lint"
+      "pre-push": "yarn lint",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
   "license": "MIT",
