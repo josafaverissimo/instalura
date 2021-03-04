@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import { colors } from '../index';
 
+// eslint-disable-next-line react/prop-types
 export default function Bubbles({ mode }) {
   const strokeColor = colors.modes[mode].background.main.color;
   const fill = colors.modes[mode].borders.main.color;

@@ -69,5 +69,5 @@ Text.defaultPropos = {
 Text.propTypes = {
   tag: PropTypes.string.isRequired,
   variant: PropTypes.string.isRequired,
-  children: PropTypes.node,
+  children: PropTypes.node.isRequired,
 };

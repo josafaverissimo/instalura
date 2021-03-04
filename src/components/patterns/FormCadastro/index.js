@@ -62,11 +62,13 @@ function FormContent() {
         .then((json) => {
           setSubmissionStatus(formStates.DONE);
 
+          // eslint-disable-next-line no-console
           console.log(json);
         })
         .catch((error) => {
           setSubmissionStatus(formStates.ERROR);
 
+          // eslint-disable-next-line no-console
           console.error(error);
         });
     }}
@@ -156,6 +158,7 @@ function FormContent() {
   );
 }
 
+// eslint-disable-next-line react/prop-types
 export default function FormCadastro({ modalsProps }) {
   return (
     <Grid.Row

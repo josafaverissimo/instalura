@@ -5,6 +5,7 @@ import { Button } from '../Button';
 import Text from '../../foundation/Text';
 import Sun from '../../../theme/Sun';
 
+// eslint-disable-next-line react/prop-types
 export default function Menu({ mode, changeMode }) {
   const currentUrlPathname = new URL('http://localhost:3000/').pathname;
 
