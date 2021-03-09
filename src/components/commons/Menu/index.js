@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from '../Link';
 import { MenuWrapper } from './styles/MenuWrapper';
 import Logo from '../../../theme/Logo';
 import { Button } from '../Button';
@@ -36,7 +35,6 @@ export default function Menu({ mode, changeMode, onRegister }) {
           <li key={link.url}>
             <Text
               tag="a"
-              href="/about"
               variant="smallestException"
               color={currentUrlPathname === link.url ? 'secondary.main' : 'tertiary.main'}
               href={link.url}
