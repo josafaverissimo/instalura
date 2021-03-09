@@ -48,7 +48,13 @@ export default function Home() {
         )}
       </Modal>
 
-      <Menu mode={currentMode} changeMode={handleChangeCurrentMode} />
+      <Menu
+        mode={currentMode}
+        changeMode={handleChangeCurrentMode}
+        onRegister={() => {
+          setIsModalOpen(!isModalOpen);
+        }}
+      />
 
       <Grid.Container marginTop={{
         xs: '32px',

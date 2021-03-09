@@ -4,6 +4,7 @@ import get from 'lodash/get';
 import PropTypes from 'prop-types';
 import { propToStyle } from '../../../theme/utils/propToStyle';
 import { breakpointsMedia } from '../../../theme/utils/breakpointsMedia';
+import Link from '../../commons/Link';
 
 export const TextStyleVariants = {
   paragraph1: css`
@@ -45,8 +46,25 @@ const TextBase = styled.span`
 `;
 
 export default function Text({
-  tag, variant, children, ...props
+  tag,
+  variant,
+  children,
+  href,
+  ...props
 }) {
+  if (href) {
+    return (
+      <TextBase
+        as={Link}
+        href={href}
+        variant={variant}
+      // eslint-disable-next-line react/jsx-props-no-spreading
+        {...props}
+      >
+        { children }
+      </TextBase>
+    );
+  }
   return (
     <TextBase
       as={tag}
@@ -64,10 +82,12 @@ Text.defaultPropos = {
   variant: 'paragraph1',
   children: null,
   color: '#0f0',
+  href: '',
 };
 
 Text.propTypes = {
   tag: PropTypes.string.isRequired,
+  href: PropTypes.string.isRequired,
   variant: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
 };
