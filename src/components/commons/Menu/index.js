@@ -6,7 +6,7 @@ import Text from '../../foundation/Text';
 import Sun from '../../../theme/Sun';
 
 // eslint-disable-next-line react/prop-types
-export default function Menu({ mode, changeMode }) {
+export default function Menu({ mode, changeMode, onRegister }) {
   const currentUrlPathname = new URL('http://localhost:3000/').pathname;
 
   const links = [
@@ -50,8 +50,16 @@ export default function Menu({ mode, changeMode }) {
         <Button ghost variant="secondary.main" mode={mode} onClick={changeMode} notStyleFocus>
           <Sun mode={mode} />
         </Button>
-        <Button ghost variant="secondary.main" mode={mode}>Entrar</Button>
-        <Button variant="primary.main" mode={mode}>Cadastrar</Button>
+        <Button
+          ghost
+          variant="secondary.main"
+          mode={mode}
+          href="/app/login"
+        >
+          Entrar
+
+        </Button>
+        <Button variant="primary.main" mode={mode} onClick={onRegister}>Cadastrar</Button>
       </MenuWrapper.RightSide>
     </MenuWrapper>
   );
