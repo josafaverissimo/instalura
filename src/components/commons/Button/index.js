@@ -74,7 +74,11 @@ export function Button({ href, children, ...props }) {
   );
 }
 
+Button.defaultProps = {
+  href: '',
+};
+
 Button.propTypes = {
-  href: PropTypes.string.isRequired,
+  href: PropTypes.string,
   children: PropTypes.node.isRequired,
 };

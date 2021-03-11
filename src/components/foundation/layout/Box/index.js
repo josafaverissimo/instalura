@@ -13,5 +13,13 @@ export const Box = styled.div`
   ${propToStyle('backgroundColor')}
   ${propToStyle('boxShadow')}
   ${propToStyle('padding')}
-  background-color: ${({ theme, mode }) => theme.colors.modes[mode].background.main.color};
+  ${propToStyle('width')}
+  ${propToStyle('listStyle')}
+  ${propToStyle('margin')}
+  ${propToStyle('marginLeft')}
+  ${propToStyle('marginTop')}
+  ${propToStyle('marginBottom')}
+  ${propToStyle('marginRight')}
+  ${({ theme, borderRadiusTheme }) => borderRadiusTheme && `border-radius: ${theme.borderRadius}`};
+  background-color: ${({ theme, mode }) => theme.colors.modes[mode].background.main.color}};
 `;

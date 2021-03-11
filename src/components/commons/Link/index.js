@@ -22,7 +22,7 @@ const StyledLink = styled.a`
 export default function Link({ href, children, ...props }) {
   return (
     <NextLink href={href}>
-      <StyledLink {...props}>
+      <StyledLink {...props} passHref>
         {children}
       </StyledLink>
     </NextLink>
