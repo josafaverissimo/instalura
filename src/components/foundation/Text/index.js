@@ -77,7 +77,7 @@ export default function Text({
   );
 }
 
-Text.defaultPropos = {
+Text.defaultProps = {
   tag: 'span',
   variant: 'paragraph1',
   children: null,
@@ -86,8 +86,9 @@ Text.defaultPropos = {
 };
 
 Text.propTypes = {
-  tag: PropTypes.string.isRequired,
-  href: PropTypes.string.isRequired,
-  variant: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired,
+  tag: PropTypes.string,
+  href: PropTypes.string,
+  variant: PropTypes.string,
+  children: PropTypes.node,
+  color: PropTypes.string,
 };
