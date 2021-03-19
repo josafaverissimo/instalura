@@ -41,6 +41,7 @@ const TextBase = styled.span`
   color: ${({ theme, color, mode }) => get(theme, `colors.modes[${mode}].${color}.color`)};
 
   ${propToStyle('textAlign')}
+  ${propToStyle('cursor')}
 
   ${(props) => propToStyle('textAlign', props)}
 `;
@@ -58,6 +59,7 @@ export default function Text({
         as={Link}
         href={href}
         variant={variant}
+        cursor="pointer"
       // eslint-disable-next-line react/jsx-props-no-spreading
         {...props}
       >
