@@ -23,25 +23,6 @@ export default function FAQScreen({ faqCategories }) {
       flex="1"
       mode={currentMode}
     >
-      <Modal
-        isOpen={isModalOpen}
-        onClose={() => {
-          setIsModalOpen(!isModalOpen);
-        }}
-      >
-        {(propsDoModal) => (
-          <FormCadastro propsDoModal={propsDoModal} />
-        )}
-      </Modal>
-
-      <Menu
-        mode={currentMode}
-        changeMode={handleChangeCurrentMode}
-        onRegister={() => {
-          setIsModalOpen(!isModalOpen);
-        }}
-      />
-
       <Grid.Container style={{ flex: 1 }}>
         <Grid.Row
           marginTop={{ xs: '32px', md: '100px' }}
@@ -114,8 +95,6 @@ export default function FAQScreen({ faqCategories }) {
           }
         </Grid.Row>
       </Grid.Container>
-
-      <Footer mode={currentMode} />
     </Box>
   );
 }

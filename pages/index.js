@@ -3,8 +3,9 @@ import PropTypes from 'prop-types';
 import Text from '../src/components/foundation/Text';
 import { Button } from '../src/components/commons/Button';
 import { Grid } from '../src/components/foundation/layout/Grid';
-import WebsitePageWrapper, { WebsitePageContext } from '../src/components/wrappers/WebsitePage';
+import { WebsitePageContext } from '../src/components/wrappers/WebsitePage';
 import Bubbles from '../src/theme/Bubbles';
+import websitePageHOC from '../src/components/wrappers/WebsitePage/hoc';
 
 function HomeScreen({ currentMode }) {
   const websitePageContext = React.useContext(WebsitePageContext);
@@ -82,23 +83,38 @@ function HomeScreen({ currentMode }) {
     </Grid.Container>
   );
 }
-export default function Home() {
-  return (
-    <WebsitePageWrapper
-      seoProps={{
-        headTitle: 'Home',
-      }}
-      pageBoxProps={{
-        backgroundImage: `url(${Bubbles.url('light')})`,
-        justifyContent: 'space-between',
-        backgroundRepeat: 'no-repeat',
-        backgroundPosition: 'bottom right',
-      }}
-    >
-      {({ currentMode }) => <HomeScreen currentMode={currentMode} />}
-    </WebsitePageWrapper>
-  );
-}
+
+export default websitePageHOC(HomeScreen, {
+  pageWrapperProps: {
+    seoProps: {
+      headTitle: 'Home',
+    },
+    pageBoxProps: {
+      backgroundImage: `url(${Bubbles.url('light')})`,
+      justifyContent: 'space-between',
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: 'bottom right',
+    },
+  },
+});
+
+// export default function Home() {
+//   return (
+//     <WebsitePageWrapper
+//       seoProps={{
+//         headTitle: 'Home',
+//       }}
+//       pageBoxProps={{
+//         backgroundImage: `url(${Bubbles.url('light')})`,
+//         justifyContent: 'space-between',
+//         backgroundRepeat: 'no-repeat',
+//         backgroundPosition: 'bottom right',
+//       }}
+//     >
+//       {({ currentMode }) => <HomeScreen currentMode={currentMode} />}
+//     </WebsitePageWrapper>
+//   );
+// }
 
 HomeScreen.propTypes = {
   currentMode: PropTypes.string.isRequired,

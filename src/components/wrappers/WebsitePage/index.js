@@ -15,6 +15,7 @@ export default function WebsitePageWrapper({
   children,
   seoProps,
   pageBoxProps,
+  menuProps,
 }) {
   const [currentMode, setCurrentMode] = React.useState('light');
   const [isModalOpen, setIsModalOpen] = React.useState(false);
@@ -55,15 +56,17 @@ export default function WebsitePageWrapper({
           )}
         </Modal>
 
-        <Menu
-          mode={currentMode}
-          changeMode={handleChangeCurrentMode}
-          onRegister={() => {
-            setIsModalOpen(!isModalOpen);
-          }}
-        />
+        {menuProps.display && (
+          <Menu
+            mode={currentMode}
+            changeMode={handleChangeCurrentMode}
+            onRegister={() => {
+              setIsModalOpen(!isModalOpen);
+            }}
+          />
+        )}
 
-        {children({ currentMode })}
+        {children}
 
         <Footer mode={currentMode} />
       </Box>
