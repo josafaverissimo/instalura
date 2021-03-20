@@ -3,19 +3,8 @@ import PropTypes from 'prop-types';
 import Text from '../../foundation/Text';
 import { Box } from '../../foundation/layout/Box';
 import { Grid } from '../../foundation/layout/Grid';
-import Menu from '../../commons/Menu';
-import Footer from '../../commons/Footer';
-import Modal from '../../commons/Modal';
-import FormCadastro from '../../patterns/FormCadastro';
 
-export default function FAQScreen({ faqCategories }) {
-  const [currentMode, setCurrentMode] = React.useState('light');
-  const [isModalOpen, setIsModalOpen] = React.useState(false);
-
-  function handleChangeCurrentMode() {
-    setCurrentMode(currentMode === 'dark' ? 'light' : 'dark');
-  }
-
+export default function FAQScreen({ faqCategories, currentMode }) {
   return (
     <Box
       display="flex"
@@ -23,25 +12,6 @@ export default function FAQScreen({ faqCategories }) {
       flex="1"
       mode={currentMode}
     >
-      <Modal
-        isOpen={isModalOpen}
-        onClose={() => {
-          setIsModalOpen(!isModalOpen);
-        }}
-      >
-        {(propsDoModal) => (
-          <FormCadastro propsDoModal={propsDoModal} />
-        )}
-      </Modal>
-
-      <Menu
-        mode={currentMode}
-        changeMode={handleChangeCurrentMode}
-        onRegister={() => {
-          setIsModalOpen(!isModalOpen);
-        }}
-      />
-
       <Grid.Container style={{ flex: 1 }}>
         <Grid.Row
           marginTop={{ xs: '32px', md: '100px' }}
@@ -114,8 +84,6 @@ export default function FAQScreen({ faqCategories }) {
           }
         </Grid.Row>
       </Grid.Container>
-
-      <Footer mode={currentMode} />
     </Box>
   );
 }
@@ -130,4 +98,5 @@ FAQScreen.propTypes = {
       description: PropTypes.string,
     })),
   })).isRequired,
+  currentMode: PropTypes.string.isRequired,
 };
