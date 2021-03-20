@@ -3,19 +3,8 @@ import PropTypes from 'prop-types';
 import Text from '../../foundation/Text';
 import { Box } from '../../foundation/layout/Box';
 import { Grid } from '../../foundation/layout/Grid';
-import Menu from '../../commons/Menu';
-import Footer from '../../commons/Footer';
-import Modal from '../../commons/Modal';
-import FormCadastro from '../../patterns/FormCadastro';
 
-export default function FAQScreen({ faqCategories }) {
-  const [currentMode, setCurrentMode] = React.useState('light');
-  const [isModalOpen, setIsModalOpen] = React.useState(false);
-
-  function handleChangeCurrentMode() {
-    setCurrentMode(currentMode === 'dark' ? 'light' : 'dark');
-  }
-
+export default function FAQScreen({ faqCategories, currentMode }) {
   return (
     <Box
       display="flex"
@@ -109,4 +98,5 @@ FAQScreen.propTypes = {
       description: PropTypes.string,
     })),
   })).isRequired,
+  currentMode: PropTypes.string.isRequired,
 };
